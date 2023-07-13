@@ -1,0 +1,87 @@
+﻿<Window x:Class="Broodjeszaak.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Broodjeszaak"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition  Height="Auto"/>
+            <RowDefinition  Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <GroupBox Header="Keuze" Grid.ColumnSpan="3" Grid.Column="0" Margin="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  />
+                    <RowDefinition  Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label FontWeight="Bold" Grid.Column="0" Grid.Row="0">Soort brood</Label>
+                <StackPanel Margin="10" Grid.Column="0" Grid.Row="1" Grid.RowSpan="3">
+                    <RadioButton x:Name="RBBroodGeen" Checked="RBBroodGeen_Checked">Geen</RadioButton>
+                    <RadioButton x:Name="RBBroodWit" Checked="RBBroodWit_Checked">Wit</RadioButton>
+                    <RadioButton x:Name="RBBroodBruin" Checked="RBBroodBruin_Checked">Bruin</RadioButton>
+                    <RadioButton x:Name="RBBroodWalkorn" Checked="RBBroodWalkorn_Checked">Waldkorn</RadioButton>
+                    <RadioButton x:Name="RBBroodMultiGranen" Checked="RBBroodMultiGranen_Checked">Multi-granen</RadioButton>
+                </StackPanel>
+                <Label FontWeight="Bold" Grid.Column="1" Grid.Row="0">Beleg</Label>
+                <ListBox x:Name="LBBeleg" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" SelectionChanged="LBBeleg_SelectionChanged"  Margin="10">
+                    <ListBoxItem x:Name="LBIKaas">Kaas</ListBoxItem>
+                    <ListBoxItem x:Name="LBIHam">Ham</ListBoxItem>
+                    <ListBoxItem x:Name="LBIKipCurry">Kip-curry</ListBoxItem>
+                    <ListBoxItem x:Name="LBIAmericain">Americain</ListBoxItem>
+                    <ListBoxItem x:Name="LBIKrabsla">Krabsla</ListBoxItem>
+                    <ListBoxItem x:Name="LBIGebakkenKip">Gebakken kip</ListBoxItem>
+                </ListBox>
+                <Label FontWeight="Bold" Grid.Column="2" >Saus</Label>
+                <ComboBox x:Name="CBSaus" Grid.Column="2" Grid.Row="1" SelectionChanged="CBSaus_SelectionChanged" Margin="10">
+                    <ComboBoxItem>Geen</ComboBoxItem>
+                    <ComboBoxItem>Mayonaise</ComboBoxItem>
+                    <ComboBoxItem>Ketchup</ComboBoxItem>
+                    <ComboBoxItem>Pepersaus</ComboBoxItem>
+                    <ComboBoxItem>Andalouse</ComboBoxItem>
+                    <ComboBoxItem>Cocktail</ComboBoxItem>
+                </ComboBox>
+                <CheckBox x:Name="CBSmos" Grid.Column="2" Grid.Row="2" Click="CBSmos_Click" VerticalAlignment="Center" Margin="10">
+                    <TextBlock>Smos?</TextBlock>
+                </CheckBox>
+                <StackPanel Grid.Column="2" Grid.Row="3" Margin="10">
+                    <Label>Prijs:</Label>
+                    <TextBox x:Name="TBPrijs">0.00</TextBox>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="BTNBestellingCreatie" Grid.Row="1" Grid.ColumnSpan="1" Click="BTNBestellingCreatie_Click" Margin="10,0,0,0">Plaats bestelling</Button>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Margin="10,0,10,0">
+            <Label FontWeight="Bold">Bestelling</Label>
+            <TextBox x:Name="TBBestellingBeschrijving" MinHeight="50" AcceptsTab="True"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Margin="10,0,10,0">
+            <Label FontWeight="Bold">Bestelling nog uit te voeren</Label>
+            <DataGrid x:Name="DGUitTeVoerenBestellingen" Height="100" ColumnWidth="*" VerticalAlignment="Top" AutoGenerateColumns="True" />
+        </StackPanel>
+        <Button x:Name="BTNVoerBestellingUit" Grid.Row="4" Grid.ColumnSpan="1" Margin="10" Click="BTNVoerBestellingUit_Click">Bestelling is uitgevoerd</Button>
+        <Button x:Name="BTNAnnulleerBestelling" Grid.Row="4" Grid.Column="3" Margin="10" Click="BTNAnnulleerBestelling_Click" >Cancel bestelling</Button>
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="3" Margin="10,0,10,0">
+            <Label FontWeight="Bold">Uitgevoerde bestellingen</Label>
+            <DataGrid x:Name="DGBestellingenUitGevoerd" Height="100" ColumnWidth="*" VerticalAlignment="Top" AutoGenerateColumns="True" />
+        </StackPanel>
+    </Grid>
+</Window>
