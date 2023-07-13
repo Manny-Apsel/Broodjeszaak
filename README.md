@@ -1,7 +1,7 @@
 # Broodjeszaak
 A technical interview test I had to finish as part of a interview proces. UI is made in dutch.
 
-# Goal
+## Goal
 Create a UI for a sandwhich shop so their clients can order sandwhiches. Choose your sort of bread, topping, saus and eventual 'smos' (i.e. different types of salad with pickles)
 Automatically calculate price whenever an option is selected and show it to the customer.
 Once a sandwhich order has been made a small text box will show the order.
