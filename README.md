@@ -15,6 +15,7 @@ A technical interview test I had to finish as part of a interview proces. UI is 
 - Lists don't use 2 decimals after comma in the price column
 - Pre-select items on start-up 
 
+## Pictures
 ![image](https://github.com/Manny-Apsel/Broodjeszaak/assets/53227568/f7a05906-0df2-418d-be77-814f4b60c39d)
 ![image](https://github.com/Manny-Apsel/Broodjeszaak/assets/53227568/35dc30a8-3bae-4369-82dc-513d56e7f98a)
 
